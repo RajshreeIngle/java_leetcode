@@ -1,6 +1,5 @@
 class Solution {
     public int pivotIndex(int[] nums) {
-        
         int pivot =0;
         int n = nums.length;
         while(n!=0){
@@ -19,7 +18,5 @@ class Solution {
             n--;
         }
         return -1;
-        
-        
     }
 }
