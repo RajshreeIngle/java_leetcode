@@ -7,13 +7,13 @@ class Solution {
             }else{
                 if(s.charAt(i) == ')' && !a.empty() && a.peek() == '('){
                     a.pop();
-                    continue;
+                    // continue;
                 }else if(s.charAt(i) == ']'  && !a.empty() && a.peek() == '['){
                     a.pop();
-                    continue;
+                    // continue;
                 }else if(s.charAt(i) == '}' && !a.empty() && a.peek() == '{'){
                     a.pop();
-                    continue;
+                    // continue;
                 }else{
                     return false;
                 }
