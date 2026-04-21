@@ -1,18 +1,6 @@
 class Solution {
     public String longestCommonPrefix(String[] strs) {
         String prefix = strs[0];
-        int n = strs.length;
-        int smallestString = prefix.length();
-        // for(int i =1; i<n ;i++){
-        //     if(strs[i] != prefix){
-        //         System.out.println("reducing one char");
-        //         char [] ch = new char[prefix.length()-1];
-        //         prefix.getChars(0,(prefix.length()-1), ch,0);
-        //         prefix = String.valueOf(ch);
-        //         System.out.println(prefix);
-        //     }
-        //     // System.out.println("no");
-        // }
         for(String str : strs){
             if(str.length() < prefix.length()){
                 prefix = prefix.substring(0, str.length());
