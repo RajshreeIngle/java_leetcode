@@ -7,11 +7,7 @@ class Solution {
             }
         }
         for(String str: strs){
-            System.out.println(prefix);
-            System.out.println(str);
             for(int i = prefix.length()-1; i>=0; i--){
-                System.out.println(prefix.charAt(i));
-                System.out.println(str.charAt(i));
                 if(prefix.charAt(i) != str.charAt(i)){
                     prefix = prefix.substring(0, i);
                 }
