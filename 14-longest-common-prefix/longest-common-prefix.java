@@ -16,7 +16,6 @@ class Solution {
                 }
             }
         }
-        System.out.println(prefix);
         if(prefix.length()>0){
             return prefix;
         }
