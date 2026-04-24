@@ -1,9 +1,21 @@
 class Solution {
     public int fib(int n) {
-        if(n<=1){
-            return n;
+        int prev = 0;
+        int next = 1;
+        int sum = 0;
+        if(n==0){
+            return 0;
+        }else if(n  == 1){
+            return 1;
         }else{
-            return fib(n-2) + fib(n-1);
-        }  
+            for(int i=1;i<n; i++){
+               sum = prev + next;
+               prev = next;
+               next = sum;
+            } 
+        }
+        return sum;
+        
     }
 }
+// 0 1 1 2 3 5 8 13 21
