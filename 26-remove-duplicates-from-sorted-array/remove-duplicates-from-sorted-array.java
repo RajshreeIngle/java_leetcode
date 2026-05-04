@@ -6,7 +6,7 @@ class Solution {
                 expected.add(nums[i]);
             }
         }
-        Arrays.fill(nums, 0);
+        // Arrays.fill(nums, 0);
         int index =0;
         for(int i : expected){
             nums[index] = i;
