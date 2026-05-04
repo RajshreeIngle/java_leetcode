@@ -1,15 +1,13 @@
 class Solution {
     public int singleNumber(int[] nums) {
-        ArrayList<Integer> ar = new ArrayList<Integer>();
-        for(int i : nums){
-            ar.add(i);
-            
-        }
-        for(int i : ar){
-            if(ar.indexOf(i) == ar.lastIndexOf(i)){
-                return i;
+        Arrays.sort(nums);
+        for(int i = 0; i< nums.length-1; i++){
+            if(nums[i] == nums[i+1]){
+                i++;
+            }else{
+                return nums[i];
             }
         }
-        return 0;
+        return nums[nums.length-1];
     }
 }
