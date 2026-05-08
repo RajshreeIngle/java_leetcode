@@ -1,44 +1,39 @@
 class Solution {
     public boolean isPalindrome(String s) {
-        
-        String s2="";
-        boolean isPal = false;
-        for(int i=0; i<s.length() ; i++){
-            char ch = s.charAt(i);
-            if(((int)ch >= 48 && (int)ch <=57) || ((int)ch >= 65 && (int)ch <=90) || ((int)ch >= 97 && (int)ch <=122)){
-                s2 = s2.concat(s.valueOf(ch));
-            }
-        }
-        s2 = s2.toLowerCase();
-        System.out.println(s2);
-        int len = s2.length();
-        int mid = 0;
-        if(len%2==0){
-            mid = (len/2)-1;
-        }else{
-            mid = (len/2);
-        }
+        s = s.toLowerCase();
+        int left =0; 
+        int right =  s.length()-1;
 
-        for(int i =0; i<=mid ; i++){
-        	System.out.println(i + " " +(len-i-1) );
-        	System.out.println(s2.charAt(i));
-        	System.out.println(s2.charAt(len-i-1));
-            if(s2.charAt(i)==(s2.charAt(len-i-1))){
-                isPal = true;
-                continue;
+        while(left<right){
+            System.out.println("left index : " +left);
+            System.out.println("right index : " +right);
+            System.out.println("char at left " + s.charAt(left));
+            System.out.println("char at right " + s.charAt(right));           
+            if(!(s.charAt(left)>= 48 && s.charAt(left) <=57)){
+                if(!(s.charAt(left)>= 97 && s.charAt(left) <=122)){
+                    System.out.println("Not a char at left index");
+                    left++;
+                    continue;
+                }
             }
-            else{
-                isPal = false;
-                break;
+            if(!(s.charAt(right)>= 48 && s.charAt(right) <=57)){
+                if(!(s.charAt(right)>= 97 && s.charAt(right) <=122)){
+                    System.out.println("Not a char at right index");
+                    right--;
+                    continue;
+                }
             }
+            
+            if(s.charAt(left) != s.charAt(right)){
+                System.out.println("3st if");
+                return false;
+            }
+            
+            left++;
+            right--;
+            
+            
         }
-        if(s2.isEmpty()) {
-			return true;
-		}
-
-        
-        // System.out.println(isPal);
-       return isPal;
-        
+        return true;
     }
 }
