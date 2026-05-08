@@ -3,12 +3,7 @@ class Solution {
         s = s.toLowerCase();
         int left =0; 
         int right =  s.length()-1;
-
-        while(left<right){
-            System.out.println("left index : " +left);
-            System.out.println("right index : " +right);
-            System.out.println("char at left " + s.charAt(left));
-            System.out.println("char at right " + s.charAt(right));           
+        while(left<right){         
             if(!(s.charAt(left)>= 48 && s.charAt(left) <=57)){
                 if(!(s.charAt(left)>= 97 && s.charAt(left) <=122)){
                     System.out.println("Not a char at left index");
@@ -23,16 +18,11 @@ class Solution {
                     continue;
                 }
             }
-            
             if(s.charAt(left) != s.charAt(right)){
-                System.out.println("3st if");
                 return false;
             }
-            
             left++;
-            right--;
-            
-            
+            right--;    
         }
         return true;
     }
