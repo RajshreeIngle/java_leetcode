@@ -9,15 +9,7 @@ class Solution {
            j++;
         }
         
-        for(int i = 0; i<m+n ;i++){
-            for(int k=0; k<m+n-i-1 ; k++){
-                if(nums1[k]>nums1[k+1]){
-                    int temp= nums1[k];
-                    nums1[k] = nums1[k+1];
-                    nums1[k+1] = temp;
-                }
-            }
-        }
-        return;
+       Arrays.sort(nums1);
+       return;
     }
 }
